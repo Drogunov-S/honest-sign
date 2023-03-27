@@ -22,47 +22,7 @@ public class App {
     public static void main(String[] args) {
         String token = "1cecc8fb-fb47-4c8a-af3d-d34c1ead8c4f";
         CrptApi crptApi = new CrptApi(TimeUnit.MINUTES, 2);
-        IntroduceGoodsRfDocs introduceGoodsRfDocs = get();
-        String stop = null;
-        do {
-            Scanner scanner = new Scanner(System.in);
-            stop = scanner.nextLine();
-            crptApi.introduceGoods(introduceGoodsRfDocs, "token ya tyt");
-        } while (!stop.equals("o"));
-    }
-    
-    public static IntroduceGoodsRfDocs get() {
-        CertificateDocument certificateDocument = CertificateDocument.CONFORMITY_CERTIFICATE;
-        LocalDate certificateDocumentDate = LocalDate.of(2022, 11, 1);
-        String certificateDocumentNumber = "123112d122ава";
-        /*required*/
-        String ownerInn = "234125211";
-        /*required*/
-        String producerInn = "213124124";
-        /*required*/
-        LocalDate productionDate = LocalDate.of(2232, 1, 4);
-        /*required*/
-        String tnvedCode = "231231421";
-        String uitCode = "32132";
-        String uituCode = "3213123";
-        Product product = new Product(certificateDocument, certificateDocumentDate, certificateDocumentNumber, ownerInn, producerInn, productionDate, tnvedCode, uitCode, uituCode);
-//        -------------------------------------
-        Description description = new Description("ИНН Участника");
-        String docid = "Произвольный id";
-        String docStatus = "Status";
-        String docType = "Doc type";
-        boolean importRequest = false;
-        String ownerInndata = "owninn2312412";
-        String participantInn = "partInn";
-        String producerInndata = "ProizvodINN";
-        LocalDate productionDatedata = LocalDate.of(2323, 4, 23);
-        ProductType productionType = ProductType.CONTRACT_PRODUCTION;
-        List<Product> products = new ArrayList<>() {{
-            add(product);
-        }};
-        LocalDate regDate = LocalDate.now();
-        String regNumber = "regNumber Autogenerate";
-        return new IntroduceGoodsRfDocs(description, docid, docStatus, docType, importRequest, ownerInndata, participantInn, producerInndata, productionDatedata, productionType, products, regDate, regNumber);
+        //crptApi.introduceGoods(introduceGoodsRfDocs, token);
     }
 }
 
